@@ -1,4 +1,4 @@
-FROM ruby:2.6.3-alpine as builder
+FROM ruby:3.0.2-alpine as builder
 
 ENV RAILS_ENV production
 WORKDIR /builder
@@ -23,7 +23,7 @@ ENV SECRET_KEY_BASE=dummy
 COPY . ./
 RUN bin/rails asserts:precompile
 
-FROM ruby:2.6.3-alpine
+FROM ruby:3.0.2-alpine
 
 ENV RAILS_ENV production
 WORKDIR /app
